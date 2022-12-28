@@ -1,11 +1,32 @@
+:root {
+  --cor-primaria: #ee2211;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url(./onda-clara.svg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111;
+    --fundo-2: #000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url(./onda-escura.svg);
+  }
+}
+
 body {
-  background: #f7f7f7;
+  background: var(--fundo-1);
   font-family: Arial;
   margin: 0rem;
   display: grid;
   gap: 3.75rem;
   justify-items: center;
   margin-top: 3.75rem;
+  color: var(--texto);
 }
 
 header {
@@ -47,17 +68,17 @@ li {
 }
 
 li a:hover {
-  border: 0.126rem solid #ee2211;
+  border: 0.126rem solid var(--cor-primaria);
 }
 
 .menu a {
   display: block;
-  background: white;
+  background: var(--fundo-2);
   padding: 0.938rem 1.875rem;
   border-radius: 0.25rem;
-  color: black;
+  color: var(--texto);
   text-transform: uppercase;
-  border: 0.126rem solid white;
+  border: 0.126rem solid var(--fundo-2);
 }
 
 .conteudo {
@@ -67,7 +88,7 @@ li a:hover {
 }
 
 .introducao {
-  background: white;
+  background: var(--fundo-2);
   padding: 2.5rem;
   text-align: right;
   position: relative;
@@ -85,7 +106,7 @@ li a:hover {
   content: "";
   width: 3.75rem;
   height: 0.25rem;
-  background: #ee2211;
+  background: var(--cor-primaria);
   position: absolute;
   top: 1.875rem;
   right: -1.875rem;
@@ -97,29 +118,29 @@ li a:hover {
 }
 
 .verMais {
-  background: #ee2211;
-  color: white;
+  background: var(--cor-primaria);
+  color: #ffffff;
   padding: 0.938rem 1.875rem;
   border-radius: 0.25rem;
   text-transform: uppercase;
 }
 
 .verMais:hover {
-  background-color: #900;
+  background-color: var(--cor-primaria-escura);
 }
 
 .subtitulo {
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--subtitulo);
   text-align: right;
   padding: 2.5rem;
   align-self: center;
-  background-image: url(./onda.svg);
+  background-image: var(--onda);
 }
 
 .vantagens {
-  background: white;
+  background: var(--fundo-2);
   padding: 2.5rem;
 }
 
@@ -136,15 +157,15 @@ li a:hover {
 }
 
 .conteudo ul li:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo-1);
 }
 
 .conteudo ul li:hover {
-  border-left: 0.25rem solid #ee2211;
+  border-left: 0.25rem solid var(--cor-primaria);
 }
 
 footer {
-  background: white;
+  background: var(--fundo-2);
   width: 100%;
   text-align: center;
   padding: 2.5rem;
